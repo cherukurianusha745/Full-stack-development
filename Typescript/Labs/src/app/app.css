@@ -1,0 +1,7 @@
+body { margin: 0; font-family: Arial, sans-serif; }
+.navbar { display: flex; justify-content: space-between; padding: 10px; background: #333; }
+.navbar ul { list-style: none; display: flex; gap: 15px; }
+.navbar a { color: white; text-decoration: none; }
+.page { padding: 20px; }
+.page img { margin: 10px 0; }
+.footer { background: #333; color: white; text-align: center; padding: 10px; }
