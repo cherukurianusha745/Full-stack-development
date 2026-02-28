@@ -1,0 +1,108 @@
+M - Pangram
+A word or a sentence in some language is called a pangram if all the characters of the alphabet of this language appear in it at least once. Pangrams are often used to demonstrate fonts in printing or test the output devices.
+
+You are given a string consisting of lowercase and uppercase Latin letters. Check whether this string is a pangram. We say that the string contains a letter of the Latin alphabet if this letter occurs in the string in uppercase or lowercase.
+
+Input
+The first line contains a single integer n (1 ≤ n ≤ 100) — the number of characters in the string.
+
+The second line contains the string. The string consists only of uppercase and lowercase Latin letters.
+
+Output
+Output "YES", if the string is a pangram and "NO" otherwise.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();     
+        String s = sc.next();     
+
+        s = s.toLowerCase();
+
+        int count = 0;
+
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            if (s.indexOf(ch) != -1) {
+                count++;
+            }
+        }
+
+        if (count == 26)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+    }
+}
+
+O - Love Story
+Timur loves codeforces. That's why he has a string 
+s
+s having length 
+10
+10 made containing only lowercase Latin letters. Timur wants to know how many indices string 
+s
+s differs from the string "codeforces".
+
+For example string 
+s
+=
+s= "coolforsez" differs from "codeforces" in 
+4
+4 indices, shown in bold.
+
+Help Timur by finding the number of indices where string 
+s
+s differs from "codeforces".
+
+Note that you can't reorder the characters in the string 
+s
+s.
+
+Input
+The first line contains a single integer 
+t
+t (
+1
+≤
+t
+≤
+1000
+1≤t≤1000) — the number of test cases.
+
+Each test case is one line and contains the string 
+s
+s, consisting of exactly 
+10
+10 lowercase Latin characters.
+
+Output
+For each test case, output a single integer — the number of indices where string 
+s
+s differs.
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();           
+        String target = "codeforces";
+
+        for (int k = 0; k < t; k++) {     
+            String s = sc.next();
+            int count = 0;
+
+            for (int i = 0; i < 10; i++) {
+                if (s.charAt(i) != target.charAt(i)) {
+                    count++;
+                }
+            }
+
+            System.out.println(count);
+        }
+    }
+}

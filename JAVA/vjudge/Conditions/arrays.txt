@@ -1,0 +1,165 @@
+Our Chef is hosting a cooking competition in which only two teams can compete at the same time. Both sides should have an equal number of participants to make the competition engaging and fair. Chef was given the duty of forming the two teams as an organizer.
+There are various conditions for forming teams. He will be assigned a number ‘N’ for each competition, and for each divisor ‘D’ of ‘N’ (including 1 and ‘N’ itself), he will add a member:
+
+If ‘D’ is even, go to the first team.
+if ‘D’ is odd, go to the second team.
+Chef needs your assistance with the event planning because he is quite busy. Your job is to advise the chef whether or not he can make two teams with the same amount of members.
+For Example:
+For ‘N’ = 10,
+The divisors are:
+1, 2, 5, 10.
+The first team will have two members corresponding to even divisors 2 and 10.
+The second team will have two members corresponding to odd divisors 1 and 5.
+So, in this case, Chef can make two teams.
+
+Input Format
+First line will contain 
+T
+T, number of testcases. Then the testcases follow.
+The first and only line of each test case contains an integer ‘N’ denoting the number given to Chef.
+Output Format
+For each test case print 1 if Chef can make two teams of equal members with the given ‘N’, else print 0.
+
+Output for each test case will be printed in a separate line.
+
+Constraints
+1
+≤
+T
+≤
+1000
+1≤T≤1000
+1
+≤
+N
+≤
+10
+5
+1≤N≤10 
+5
+ 
+It is guaranteed that the sum of N over all test cases doesn’t exceed 10^5.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int T=sc.nextInt();
+	    for(int i=0;i<T;i++){
+	        int N=sc.nextInt();
+	        if(N%2==0 && N%4!=0){
+	            System.out.println("1");
+	        }
+	        else{
+	            System.out.println("0");
+	        }
+	    }
+	
+	}
+}
+
+Given a sorted array 
+a
+r
+r
+arr, remove the duplicates from 
+a
+r
+r
+arr such that each element appears only once and display the new array.
+
+Input:
+The first line contains 
+T
+T, the number of test cases. Then the 
+T
+T test cases follow.
+Each test case contains 
+2
+2 lines of input:
+The first line contains 
+n
+n, the size of array 
+a
+r
+r
+arr.
+The second line contains 
+n
+n space separated elements of array 
+a
+r
+r
+arr.
+Output:
+For each test case, output in a single line, the new array. The elements of the array should be separated by space. Your output format should match with that given in the sample output.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in); 
+
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+
+            for (int j = 0; j < n; j++) {
+                arr[j] = sc.nextInt();
+            }
+
+            System.out.print(arr[0]); 
+
+            for (int j = 1; j < n; j++) {
+                if (arr[j] != arr[j - 1]) {
+                    System.out.print(" " + arr[j]); 
+                }
+            }
+
+            System.out.println(); 
+        }
+
+        
+    }
+}
+
+Churchill was a kindhearted man, and he wanted to give a cakewalk problem to the coders present, to warm them up.
+
+ Given an array of N integers, print the product of the numbers present in the array.
+
+Use appropriate variable types to avoid overflow errors
+
+Input
+The first line contains T, the number of test cases.
+
+Each test cases consists of two lines, the first line containing N, the number of elements, and the second line containing N integers.
+
+Output
+ For each test case, print the required answer in a single line.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in); // ✅ FIXED
+
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int N = sc.nextInt();
+            long product = 1;
+
+            for (int j = 0; j < N; j++) {
+                int x = sc.nextInt();
+                product *= x;
+            }
+
+            System.out.println(product);
+        }
+
+      
+    }
+}
+

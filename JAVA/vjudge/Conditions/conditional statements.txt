@@ -1,0 +1,341 @@
+Write a program which prints 1000 "Hello World".
+
+Input
+There is no input for this problem.
+
+Output
+The output consists of 1000 lines. Print "Hello World" in each line.
+public class Main
+{
+	public static void main(String[] args) {
+	    for(int c=0;c<1000;c++){
+	        System.out.println("Hello World");
+	    }
+		
+	}
+}
+
+Write a program which prints small/large/equal relation of given two integers a and b.
+
+Input
+Two integers a and b separated by a single space are given in a line.
+
+Output
+For given two integers a and b, print
+
+a < b
+if a is less than b,
+
+a > b
+if a is greater than b, and
+
+a == b
+if a equals to b.
+
+Constraints
+-1000 ≤ a, b ≤ 1000
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        String operations = (a < b) ? "a < b" :
+                        (a > b) ? "a > b" :
+                                  "a == b";
+
+        System.out.println(operations);
+    }
+}
+
+n schoolchildren divide 
+k
+k apples evenly, the residue remains in the basket. How many apples remain in the basket?
+
+Input
+Two positive integers 
+n
+n and 
+k
+k not greater than 
+1500
+1500 — rarely are there more pupils in school, and where to find such a basket?
+
+Output
+Print the number of apples in the basket.
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int total=k%n;
+        System.out.println(total);
+    }
+}
+
+Chef is not feeling well today. He measured his body temperature using a thermometer and it came out to be 
+X
+X °F.
+
+A person is said to have fever if his body temperature is strictly greater than 
+98
+98 °F.
+
+Determine if Chef has fever or not.
+
+Input Format
+The first line contains a single integer 
+T
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains one integer 
+X
+X - the body temperature of Chef in °F.
+Output Format
+For each test case, output YES if Chef has fever. Otherwise, output NO.
+
+You may print each character of YES and NO in uppercase or lowercase (for example, yes, yEs, Yes will be considered identical).
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        for (int i = 1; i <= T; i++) {
+            int X = sc.nextInt();
+
+            String result = (X > 98) ? "YES" : "NO";
+            System.out.println(result);
+        }
+    }
+}
+
+Chef has his lunch only between 
+1
+1 pm and 
+4
+4 pm (both inclusive).
+
+Given that the current time is 
+X
+X pm, find out whether it is lunchtime for Chef.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, the number of test cases. Then the test cases follow.
+Each test case contains a single line of input, containing one integer 
+X
+X.
+Output Format
+For each test case, print in a single line 
+YES
+YES if it is lunchtime for Chef. Otherwise, print 
+NO
+NO.
+
+You may print each character of the string in either uppercase or lowercase (for example, the strings 
+YeS
+YeS, 
+yEs
+yEs, 
+yes
+yes and 
+YES
+YES will all be treated as identical).
+
+Constraints
+1
+≤
+T
+≤
+12
+1≤T≤12
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt(); 
+
+        for (int i = 0; i < T; i++) {
+            int X = sc.nextInt(); 
+
+            System.out.println((X >= 1 && X <= 4) ? "YES" : "NO");
+        }
+    }
+}
+
+Chef considers the climate HOT if the temperature is above 
+20
+20, otherwise he considers it COLD. You are given the temperature 
+C
+C, find whether the climate is HOT or COLD.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+The first and only line of each test case contains a single integer, the temperature 
+C
+C.
+Output Format
+For each test case, print on a new line whether the climate is HOT or COLD.
+
+You may print each character of the string in either uppercase or lowercase (for example, the strings hOt, hot, Hot, and HOT will all be treated as identical).
+
+Constraints
+1
+≤
+T
+≤
+50
+1≤T≤50
+0
+≤
+C
+≤
+40
+0≤C≤40
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int C = sc.nextInt();
+            System.out.println(C > 20 ? "HOT" : "COLD");
+        }
+    }
+}
+
+Alice buys a toy with a selling price of 
+100
+100 rupees. There is a discount of 
+x
+x percent on the toy. Find the amount Alice needs to pay for it.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+The first and only line of each test case contains a single integer, 
+x
+x — the discount on the toy.
+Output Format
+For each test case, output on a new line the price that Alice needs to pay.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+0
+≤
+x
+<
+100
+0≤x<100
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt();
+
+        for (int i = 0; i < T; i++) {
+            int x = sc.nextInt();
+            int result=100-x;
+            System.out.println(result);
+        }
+    }
+}
+
+Chef is looking to buy a TV and has shortlisted two models. The first one costs 
+A
+A rupees, while the second one costs 
+B
+B rupees.
+
+Since there is a huge sale coming up on Chefzon, Chef can get a flat discount of 
+C
+C rupees on the first TV, and a flat discount of 
+D
+D rupees on the second one.
+
+Help Chef determine which of the two TVs would be cheaper to buy during the sale.
+
+Input Format
+The first line contains a single integer 
+T
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains four space-separated integers 
+A
+A, 
+B
+B, 
+C
+C and 
+D
+D — the marked price (in rupees) of the first TV, the marked price (in rupees) of the second TV, the flat discount (in rupees) of the first TV, and the flat discount (in rupees) of the second TV.
+Output Format
+For each test case, print a single line containing the string First if the first TV is cheaper to buy with discount, or Second if the second TV is cheaper to buy with discount. If both of them cost the same after discount, print Any.
+
+You may print each character of the string in uppercase or lowercase (for example, the strings first, First, fIRSt, and FIRST will all be treated as identical).
+
+Constraints
+1
+≤
+T
+≤
+5000
+1≤T≤5000
+1
+≤
+A
+,
+B
+≤
+100
+1≤A,B≤100
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int T = sc.nextInt(); 
+
+        for (int i = 0; i < T; i++) {
+            int A = sc.nextInt(); 
+            int B = sc.nextInt(); 
+            int C = sc.nextInt(); 
+            int D = sc.nextInt(); 
+
+            int costFirst = A - C;
+            int costSecond = B - D;
+
+            if (costFirst < costSecond) {
+                System.out.println("First");
+            } else if (costFirst > costSecond) {
+                System.out.println("Second");
+            } else {
+                System.out.println("Any");
+            }
+        }
+    }
+}
