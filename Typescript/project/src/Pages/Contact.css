@@ -1,0 +1,31 @@
+.page {
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid gray;
+}
+
+button {
+  margin-top: 15px;
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  border: none;
+}
