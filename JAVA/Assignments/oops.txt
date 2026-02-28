@@ -1,0 +1,120 @@
+OOPs Concepts Assignment
+### Problem 1: Class and Object
+Problem Statement:
+Create a class Car with attributes brand, model, and year. Create an
+object of this class and print its attributes.
+Input Format:
+The input consists of three values: brand, model, and year of the car.
+Constraints:
+Brand and model are strings, and the year is an integer.
+Output Format:
+Print the details of the car object.
+Example:
+Input:
+Toyota Corolla 2022
+Output:
+Brand: Toyota
+Model: Corolla
+Year: 2022
+1)
+import java.util.Scanner;
+class Car {
+String brand;
+String model;
+int year;
+}
+public class Main {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+String brand = sc.next();
+String model = sc.next();
+int year = sc.nextInt();
+Car car = new Car();
+car.brand = brand;
+car.model = model;
+car.year = year;
+System.out.println("Brand: " + car.brand);
+System.out.println("Model: " + car.model);
+System.out.println("Year: " + car.year);
+}
+}
+
+### Problem 2: Encapsulation
+Problem Statement:
+Create a class BankAccount with private attributes account_number
+and balance. Implement methods to set and get the balance while
+ensuring data security.
+Input Format:
+The input consists of an account number and initial balance.
+Constraints:
+Balance should be a non-negative integer.
+Output Format:
+Print the account details ensuring encapsulation principles.
+Example:
+Input:
+123456789 5000
+Output:
+Account Number: 123456789
+Balance: 5000
+---
+2)
+import java.util.Scanner;
+class BankAccount {
+private String accountNumber;
+private int balance;
+public BankAccount(String accountNumber, int balance) {
+this.accountNumber = accountNumber;
+if (balance >= 0) {
+this.balance = balance;
+} else {
+this.balance = 0;
+}
+}
+public int getBalance() {
+return balance;
+}
+public String getAccountNumber() {
+return accountNumber;
+}
+}
+public class Main {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+String accNo = sc.next();
+int balance = sc.nextInt();
+BankAccount account = new BankAccount(accNo, balance);
+System.out.println("Account Number: " + account.getAccountNumber());
+System.out.println("Balance: " + account.getBalance());
+}
+}
+
+### Problem 3: Inheritance
+Problem Statement:
+Create a base class Animal with a method make_sound(). Derive a
+class Dog from Animal and override the method to print "Bark".
+Input Format:
+No input required.
+Constraints:
+The derived class should inherit the base class properties.
+Output Format:
+Invoke make_sound() method from Dog class and print the sound.
+Example:
+Output:
+Bark
+3)
+class Animal {
+void makeSound() {
+System.out.println("sound");
+}
+}
+class Dog extends Animal {
+void makeSound() {
+System.out.println("Bark");
+}
+}
+public class Main {
+public static void main(String[] args) {
+Dog dog = new Dog();
+dog.makeSound();
+}
+}

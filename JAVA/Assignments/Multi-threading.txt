@@ -1,0 +1,72 @@
+Threads Assignment ### Problem: Multi-threading and Synchronization
+Threads Assignment
+### Problem: Multi-threading and Synchronization
+Problem Statement:
+Create a Java program that demonstrates the concept of
+multi-threading and synchronization. Implement a shared
+BankAccount class where multiple threads (representing different
+users) try to withdraw money concurrently. Use synchronization to
+ensure that the account balance does not become inconsistent.
+Requirements:
+- Create a BankAccount class with an initial balance.
+- Implement a withdraw() method that ensures synchronized access.
+- Create multiple threads that try to withdraw money from the same
+account.
+- Ensure that withdrawals do not allow the balance to go negative.
+Input Format:
+- The initial balance of the bank account.
+- Multiple withdrawal amounts requested by different threads.
+Constraints:
+- The balance should be a non-negative integer.
+- Each withdrawal amount should be a positive integer.
+Output Format:
+- Print the remaining balance after each successful withdrawal.
+- Display a message if a withdrawal cannot be processed due to
+insufficient funds.
+
+
+import java.util.*;
+class BankAccount {
+    private int balance;
+    public BankAccount(int balance) {
+        this.balance = balance;
+    }
+    public synchronized void withdraw(int amount) {
+        if (balance >= amount) {
+            System.out.println("Withdrawal of " + amount + " successful. Remaining balance: " + (balance - amount));
+            balance = balance - amount;
+        } else {
+            System.out.println("Insufficient balance for withdrawal of " + amount);
+        }
+    }
+}
+class UserThread extends Thread {
+    BankAccount account;
+    int amount;
+    public UserThread(BankAccount account, int amount) {
+        this.account = account;
+        this.amount = amount;
+    }
+    public void run() {
+        account.withdraw(amount);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter initial balance: ");
+        int balance = sc.nextInt();
+        BankAccount account = new BankAccount(balance);
+        System.out.print("Enter number of withdrawals: ");
+        int n = sc.nextInt();
+        UserThread[] threads = new UserThread[n];
+        for (int i = 0; i < n; i++) {
+            int amt = sc.nextInt();
+            threads[i] = new UserThread(account, amt);
+        }
+        for (int i = 0; i < n; i++) {
+            threads[i].start();
+        }
+    }
+}
+

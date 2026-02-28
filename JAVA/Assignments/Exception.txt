@@ -1,0 +1,52 @@
+Exceptions Assignment
+### Problem: Understanding Runtime Exceptions
+Problem Statement:
+Identify and handle different types of runtime exceptions in Java.
+Implement separate code snippets to demonstrate each exception
+and provide appropriate exception handling using try-catch blocks.
+Requirements:
+- Write separate Java programs for at least five different runtime
+exceptions.
+- Use try-catch blocks to handle exceptions gracefully.
+- Provide meaningful error messages when an exception occurs.
+Exceptions to Cover:
+1. ArithmeticException - Division by zero.
+2. NullPointerException - Accessing a method or property of a null
+object.
+3. ArrayIndexOutOfBoundsException - Accessing an invalid index in
+an array.
+4. NumberFormatException - Converting an invalid string to a
+number.
+5. ClassCastException - Incorrect type casting.
+Input Format:
+Each program should take an input that can potentially cause the
+exception.
+Constraints:
+- Handle exceptions properly without crashing the program.
+- Use appropriate messages to inform the user about the error.
+Output Format:
+- Print a meaningful message when an exception occurs.
+- Ensure program execution continues smoothly even after an
+exception.
+3. ArrayIndexOutOfBoundsException
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int[] arr = {10, 20, 30};
+
+        try {
+            System.out.print("Enter index: ");
+            int index = sc.nextInt();
+
+            System.out.println("Value: " + arr[index]);
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Invalid array index.");
+        }
+
+        System.out.println("Program continues...");
+    }
+}

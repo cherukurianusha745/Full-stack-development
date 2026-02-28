@@ -1,0 +1,22 @@
+4. NumberFormatException
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter a number: ");
+            String input = sc.next();
+
+            int num = Integer.parseInt(input);
+            System.out.println("Number is: " + num);
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Invalid number format.");
+        }
+
+        System.out.println("Program continues...");
+    }
+}

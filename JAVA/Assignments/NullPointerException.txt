@@ -1,0 +1,19 @@
+2. NullPointerException
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            String str = null;  
+
+            System.out.println("Length: " + str.length());
+
+        } catch (NullPointerException e) {
+            System.out.println("Error: You are trying to use a null object.");
+        }
+
+        System.out.println("Program continues...");
+    }
+}
+

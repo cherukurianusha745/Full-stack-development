@@ -1,0 +1,93 @@
+Abstract Class Implementation – Media
+Library
+Objective
+Design a simple Java application that demonstrates the concept of abstraction and dynamic
+method dispatch using an abstract class named Media. The application should allow users to
+input and display details about different types of media: Books, Movies, and Songs.
+Requirements
+1. Define an abstract class Media with the following:
+o Fields: title, creator, duration
+o A Scanner object for input
+o An abstract method void printDetails() to be implemented by child
+classes
+2. Create the following three subclasses that extend the Media class:
+o Book
+▪ Accept user input for book title, author, and number of pages
+▪ Display the book details
+o Movie
+▪ Accept user input for movie title, director, and duration in minutes
+▪ Display the movie details
+o Song
+▪ Accept user input for song title, singer, and duration in minutes
+▪ Display the song details
+3. In the main() method of the AbstractMediaDemo class:
+o Create a base class reference (Media)
+o Assign it to each subclass one by one (Book, Movie, Song)
+o Call printDetails() on each instance using dynamic method dispatch
+
+Abstract Class Implementation 
+import java.util.*;
+abstract class Media {
+    String title;
+    String creator;
+    int duration;
+    Scanner sc = new Scanner(System.in);
+    abstract void printDetails();
+}
+class Book extends Media {
+    int pages;
+    void printDetails() {
+        System.out.println("Entering Book Details...");
+        System.out.print("Enter Book Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Author Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Number of Pages: ");
+        pages = sc.nextInt();
+        sc.nextLine(); 
+        System.out.println("Book - Title: " + title +
+                ", Author: " + creator +
+                ", Pages: " + pages);
+    }
+}
+class Movie extends Media {
+    void printDetails() {
+        System.out.println("Entering Movie Details...");
+        System.out.print("Enter Movie Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Director Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Duration (in minutes): ");
+        duration = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Movie - Title: " + title +
+                ", Director: " + creator +
+                ", Duration: " + duration + " mins");
+    }
+}
+class Song extends Media {
+    void printDetails() {
+        System.out.println("Entering Song Details...");
+        System.out.print("Enter Song Title: ");
+        title = sc.nextLine();
+        System.out.print("Enter Singer Name: ");
+        creator = sc.nextLine();
+        System.out.print("Enter Duration (in minutes): ");
+        duration = sc.nextInt();
+        sc.nextLine();
+        System.out.println("Song - Title: " + title +
+                ", Singer: " + creator +
+                ", Duration: " + duration + " mins");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Media m;  
+        m = new Book();
+        m.printDetails();
+        m = new Movie();
+        m.printDetails();
+        m = new Song();
+        m.printDetails();
+    }
+}
