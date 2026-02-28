@@ -1,0 +1,233 @@
+
+
+body {
+  background-color: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+/* ------------------ HEADER / HERO ------------------ */
+.header {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #ffffff;
+  padding: 3.5rem 1rem;
+  text-align: center;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.avatar-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.role {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.95;
+}
+
+.location {
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  opacity: 0.9;
+}
+
+.contact {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+/* ------------------ NAVBAR ------------------ */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #2563eb;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* ------------------ MAIN CONTAINER ------------------ */
+.container {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* ------------------ CARDS ------------------ */
+.card {
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: 14px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #0f172a;
+}
+
+.card p {
+  font-size: 0.98rem;
+  color: #374151;
+}
+
+/* ------------------ SKILLS GRID ------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem;
+}
+
+.grid div {
+  background: #eef2ff;
+  color: #1e3a8a;
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ------------------ PROJECTS ------------------ */
+#projects article {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+#projects article:last-child {
+  border-bottom: none;
+}
+
+#projects h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.3rem;
+}
+
+#projects p {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* ------------------ CONTACT FORM ------------------ */
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* ------------------ FOOTER ------------------ */
+.footer {
+  text-align: center;
+  padding: 1.2rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-menu a {
+    margin: 0.6rem 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .header h1 {
+    font-size: 1.9rem;
+  }
+  
+}

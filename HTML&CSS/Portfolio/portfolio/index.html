@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cherukuri Anusha | Full Stack Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<!-- HEADER / HERO -->
+<header class="header">
+  <div class="header-content">
+    <img src="Anu.jpeg" alt="Anusha C" class="avatar-img">
+    <h1>Cherukuri Anusha</h1>
+    <p class="role">
+      Full Stack Developer | Front-End & Back-End Engineer | Data Analyst | UI Designer
+    </p>
+    <p class="location">India</p>
+    <p class="contact">
+      📧 cherukurianusha745@gmail.com | 📞 +91 9391740991
+    </p>
+  </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">Anusha</div>
+
+    <div class="hamburger" id="hamburger">☰</div>
+
+    <div class="nav-menu" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <!-- ABOUT -->
+  <section id="about" class="card">
+    <h2>About Me</h2>
+    <p>
+      I am a dedicated <strong>Full Stack Developer</strong> with hands-on experience in
+      front-end development, back-end technologies, data analysis, and UI design.
+      I specialize in building clean, responsive, and user-centric web applications.
+      I enjoy converting ideas and designs into reliable, scalable, and production-ready solutions
+      using modern web technologies.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="card">
+    <h2>Technical Skills</h2>
+    <div class="grid">
+      <div>HTML5</div>
+      <div>CSS3</div>
+      <div>JavaScript</div>
+      <div>React</div>
+      <div>Backend Development</div>
+      <div>Responsive Web Design</div>
+      <div>UI / UX Fundamentals</div>
+      <div>Data Analysis Basics</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="card">
+    <h2>Projects</h2>
+
+    <article>
+  <h3>Personal Portfolio Website</h3>
+  <p>
+    Designed and developed a responsive personal portfolio website using HTML,
+    CSS, and JavaScript to showcase technical skills, academic projects,
+    certifications, and professional achievements with an interactive user interface.
+  </p>
+</article>
+
+<article>
+  <h3>College Event Registration System</h3>
+  <p>
+    Developed a web-based event registration system that enables students to
+    register for college events online, view event details, and manage participation.
+    The system integrates frontend interfaces with backend database management.
+  </p>
+</article>
+
+<article>
+  <h3>Regional Language Digital Tutorial</h3>
+  <p>
+    Built an educational web platform that provides regional language learning
+    tutorials through interactive lessons, multimedia content, and user-friendly
+    navigation to support digital learning accessibility.
+  </p>
+</article>
+
+<article>
+  <h3>Seamless: Doctor Appointment Booking System</h3>
+  <p>
+    Developed a healthcare web application that allows patients to book doctor
+    appointments online, view available time slots, and manage appointment
+    schedules efficiently using a secure and user-friendly interface.
+  </p>
+</article>
+
+<article>
+  <h3>E-Commerce Website</h3>
+  <p>
+    Created a full-stack e-commerce platform that enables users to browse products,
+    add items to cart, and securely purchase clothing, gadgets, and electronic
+    devices through an intuitive online shopping system.
+  </p>
+</article>
+
+<article>
+  <h3>Price Comparison Website</h3>
+  <p>
+    Developed an AI-powered price comparison platform that collects and compares
+    product prices across multiple online shopping websites, helping users find
+    the best deals and make cost-effective purchasing decisions.
+  </p>
+</article>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="card">
+    <h2>Contact Me</h2>
+
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© <span id="year"></span> Danduboyina Gurulakshmi | Professional Portfolio</p>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const hamburger = document.getElementById("hamburger");
+  const navMenu = document.getElementById("navMenu");
+
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Thank you for reaching out. This is a demo contact form.");
+  }
+</script>
+
+</body>
+</html>
