@@ -1,0 +1,19 @@
+.menu-container {
+  display: flex;              /* 🔥 THIS is the key */
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;            /* responsive */
+}
+
+/* Each menu item */
+.menu-item {
+  text-align: center;
+}
+
+/* Images styling */
+.menu-item img {
+  width: 200px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}

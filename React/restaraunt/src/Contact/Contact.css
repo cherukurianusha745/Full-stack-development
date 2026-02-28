@@ -1,0 +1,20 @@
+.Contact-page {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;   
+}
+
+.Contact-title {
+  width: 100%;       
+  margin-bottom: 30px;
+}
+
+.Contact-card {
+ 
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  text-align: center;
+} 
