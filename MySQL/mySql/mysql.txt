@@ -1,0 +1,204 @@
+create database day1;
+use day1;
+create table blood_group(
+bg_id int primary key,
+bg_name varchar(10) unique
+);
+insert into blood_group values(1,'A+'),(2,'A-'),(3,'B+'),(4,'B-'),(5,'O+'),(6,'O-'),(7,'AB+'),(8,'AB-');
+desc blood_group;
+select * from blood_group;
+create table patient(
+pid int primary key,
+fname varchar(40),
+lname varchar(40),
+age int,
+bg_id int,
+foreign key (bg_id) references blood_group(bg_id)
+);
+desc patient;
+INSERT INTO patient VALUES
+(1,'madhava','reddy',45,5),
+(2,'abhinav','bandra',45,6),
+(3,'hari','kiran',60,3),
+(4,'madhava','kiran',52,5),
+(5,'veena','kumari',42,NULL),
+(6,'kiran','kumar',39,4),
+(2, 'abhinav', 'bandra', 45, 'o-ve'),
+(7, 'mahes%h', 'nambootri', 36, 'b+ve'),
+(8, 'rahul', 'kumar', 46, 'b-ve'),
+(9, 'bharat', 'kumar', 56, 'b-ve');
+select * from patient;
+select p.pid,p.fname,p.lname,p.age,b.bg_name AS blood_group from patient p 
+left join blood_group b
+on p.bg_id=b.bg_id;
+select concat(fname,lname,"'s bg is",bg,"and he\she from india") as "patients details" from patient;
+
+
+create database day2;
+use day2;
+CREATE TABLE employee (
+    eid INT,
+    fname VARCHAR(50),
+    lname VARCHAR(50),
+    age INT,
+    salary INT NULL,
+    dept VARCHAR(20),
+    doj DATE
+);
+INSERT INTO employee (eid, fname, lname, age, salary, dept, doj) VALUES
+(1, 'rajeev', 'sukla', 23, 12000, '.net', '2011-10-23'),
+(2, 'sowmya', 'kumari', 23, 19000, 'db', '2010-11-13'),
+(3, 'kishore', 'kumar', 27, 36000, 'android', '2011-10-16'),
+(4, 'abimanyu', 'biswal', 22, NULL, 'android', '2010-02-20'),
+(5, 'soni', 'kumar', 24, 21800, '.net', '2009-06-21'),
+(6, 'anu', '_singh', 22, 12000, 'db', '2010-10-23'),
+(7, '_dinesh', 'moh%anty', 23, 15000, '.net', '2009-08-26'),
+(8, 'nishala', '_kumari', 22, 18000, 'db', '2008-07-19'),
+(1, 'rajeev', 'sukla', 23, 12000, '.net', '2011-10-23');
+select * from employee;
+select * from employee order by fname desc;
+select concat(fname,lname) as fullname from employee;
+select concat(fname,lname) as fullname,age from employee;
+SELECT * FROM employee ORDER BY fname ASC;
+SELECT * FROM employee ORDER BY fname DESC;
+SELECT * FROM employee ORDER BY fname ASC LIMIT 3;
+SELECT CONCAT(fname,' ',lname) AS fullname FROM employee;
+SELECT CONCAT(fname,' ',lname) AS fullname, age FROM employee;
+
+
+create database day3;
+use day3;
+CREATE TABLE employee (
+    eid INT,
+    fname VARCHAR(50),
+    lname VARCHAR(50),
+    age INT,
+    salary INT NULL,
+    dept VARCHAR(20),
+    doj DATE
+);
+INSERT INTO employee (eid, fname, lname, age, salary, dept, doj) VALUES
+(1, 'rajeev', 'sukla', 23, 12000, '.net', '2011-10-23'),
+(2, 'sowmya', 'kumari', 23, 19000, 'db', '2010-11-13'),
+(3, 'kishore', 'kumar', 27, 36000, 'android', '2011-10-16'),
+(4, 'abimanyu', 'biswal', 22, NULL, 'android', '2010-02-20'),
+(5, 'soni', 'kumar', 24, 21800, '.net', '2009-06-21'),
+(6, 'anu', '_singh', 22, 12000, 'db', '2010-10-23'),
+(7, '_dinesh', 'moh%anty', 23, 15000, '.net', '2009-08-26'),
+(8, 'nishala', '_kumari', 22, 18000, 'db', '2008-07-19'),
+(1, 'rajeev', 'sukla', 23, 12000, '.net', '2011-10-23');
+select * from employee;
+select age from employee group by age having age>23;
+SELECT * FROM employee WHERE age > 23;
+SELECT DISTINCT lname FROM employee;
+SELECT * FROM employee WHERE fname LIKE '%a';
+select * FRom employee where salary between 15000 and 20000;
+select * from employee where age is not null;
+select * from employee where fname like ‘a%’;
+select * from employee where lname like ‘%a_’ ;
+DELETE FROM employee WHERE eid = 4;
+TRUNCATE TABLE employee;
+DROP TABLE employee;
+SELECT e1.* FROM employee as e1 WHERE 2 = (SELECT COUNT(DISTINCT e2.age) FROM employee AS e2 WHERE e2.age > e1.age);
+
+create database day4;
+use day4;
+create table department (
+    dept_id int primary key,
+    dept_name varchar(50));
+insert into department values(1, 'hr'),(2, 'it'),(3, 'finance');
+create table employee (
+    emp_id int primary key,
+    emp_name varchar(50),
+    salary int,
+    dept_id int,
+    foreign key (dept_id) references department(dept_id));
+insert into employee values
+(101, 'amit', 30000, 1),
+(102, 'neha', 40000, 2),
+(103, 'raj', 35000, 2),
+(104, 'priya', 45000, 3),
+(105, 'kiran', 25000, null);
+select e.emp_id, e.emp_name, d.dept_name from employee e inner join department d on e.dept_id = d.dept_id;
+select e.emp_id, e.emp_name, d.dept_name from employee e right join department d on e.dept_id = d.dept_id;
+select e1.salary from employee e1 where 1=(select count(*) from employee e2 where e2.salary>e1.salary);
+select e1.name as 'employee',e2.name as 'manager' from emp_mgr e1 join emp_mgr e2 on e1.mgr_id=e2.eid and e1.exp>e2.exp;
+create database day4;
+use day4;
+create table blood_group(
+bg_id int primary key,
+bg_name varchar(10) unique
+);
+insert into blood_group values(1,'A+'),(2,'A-'),(3,'B+'),(4,'B-'),(5,'O+'),(6,'O-'),(7,'AB+'),(8,'AB-');
+desc blood_group;
+select * from blood_group;
+CREATE TABLE patient1 (
+    pid INT,
+    fname VARCHAR(50),
+    lname VARCHAR(50),
+    age INT,
+    bg VARCHAR(10)
+);
+INSERT INTO patient1 VALUES
+(1,'madhava','reddy',45,5),
+(2,'abhinav','bandra',45,6),
+(3,'hari','kiran',60,3),
+(4,'madhava','kiran',52,5),
+(5,'veena','kumari',42,NULL),
+(6,'kiran','kumar',39,4),
+(2, 'abhinav', 'bandra', 45, 'o-ve'),
+(7, 'mahes%h', 'nambootri', 36, 'b+ve'),
+(8, 'rahul', 'kumar', 46, 'b-ve'),
+(9, 'bharat', 'kumar', 56, 'b-ve');
+select * from patient1;
+select concat(fname,lname,"'s bg is",bg,"and he/she from india") as "patient details" from patient1;
+
+create database day5;
+use day5;
+CREATE TABLE country (
+    country_id INT PRIMARY KEY,
+    country_name VARCHAR(50)
+);
+INSERT INTO country VALUES(1,'India'),(2,'United States');
+CREATE TABLE state (
+    state_id INT PRIMARY KEY,
+    state_name VARCHAR(50),
+    country_id INT,
+    FOREIGN KEY (country_id)
+    REFERENCES country(country_id)
+);
+INSERT INTO state VALUES
+(1,'Karnataka',1),
+(2,'Tamilnadu',1),
+(3,'California',2),
+(4,'Andhra Pradesh',1),
+(5,'Kerala',1);
+CREATE TABLE city (
+    cid INT PRIMARY KEY,
+    c_name VARCHAR(50),
+    state_id INT,
+    FOREIGN KEY (state_id)
+    REFERENCES state(state_id)
+);
+INSERT INTO city VALUES
+(1,'Bangalore',1),
+(2,'Chennai',2),
+(3,'Mysore',1),
+(4,'San Francisco',3),
+(5,'Hyderabad',4);
+CREATE TABLE students (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    city_id INT,
+    FOREIGN KEY (city_id)
+    REFERENCES city(cid)
+);
+INSERT INTO students VALUES
+(1,'Kumar',1),
+(2,'Mahesh',3),
+(3,'Vishnu',1),
+(4,'Paul',4),
+(5,'Baskar',2);
+SELECT s.name,c.c_name,st.state_name,cn.country_name FROM students s JOIN city c ON s.city_id = c.cid JOIN state st ON c.state_id = st.state_id JOIN country cn ON st.country_id = cn.country_id;
+SELECT s.name,c.c_name,st.state_name,cn.country_name FROM students s left JOIN city c ON s.city_id = c.cid JOIN state st ON c.state_id = st.state_id JOIN country cn ON st.country_id = cn.country_id;
+SELECT s.name,c.c_name,st.state_name,cn.country_name FROM students s right JOIN city c ON s.city_id = c.cid JOIN state st ON c.state_id = st.state_id JOIN country cn ON st.country_id = cn.country_id;
