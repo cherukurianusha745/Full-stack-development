@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Teams</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="loadTeams()">
+
+<div class="navbar">
+<h2>🏏 IPLStats</h2>
+<div>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+</div>
+</div>
+
+<div class="search-box">
+<input
+type="text"
+id="teamSearch"
+placeholder="Search Team..."
+onkeyup="searchTeams()">
+</div>
+
+<div id="teamContainer"
+class="card-container"></div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

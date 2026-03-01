@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Players</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="loadPlayers()">
+
+<div class="navbar">
+<h2>🏏 IPLStats</h2>
+<div>
+<a href="teams.html">Teams</a>
+<a href="players.html">Players</a>
+</div>
+</div>
+
+<div class="search-box">
+
+<input
+type="text"
+id="playerSearch"
+placeholder="Search Player"
+onkeyup="filterPlayers()">
+
+<select id="roleFilter"
+onchange="filterPlayers()">
+
+<option value="All">All Roles</option>
+<option>Batsman</option>
+<option>Bowler</option>
+<option>All-Rounder</option>
+<option>Wicket Keeper</option>
+
+</select>
+
+</div>
+
+<div id="playerContainer"
+class="card-container"></div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
