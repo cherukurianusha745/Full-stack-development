@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HRPro - Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="checkLogin(); loadEmployeeCount();">
+
+
+
+<div class="navbar">
+
+    <h2>HRPro</h2>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="employees.html">Employees</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="payroll.html">Payroll</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <!-- Login Signup -->
+        <span id="authLinks">
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+        </span>
+
+        <!-- Logout -->
+        <button id="logoutBtn"
+            onclick="logout()"
+            style="display:none;">
+            Logout
+        </button>
+    </div>
+
+</div>
+
+<div class="container">
+
+    <h1>Welcome to HR Management System</h1>
+
+    <p>
+        Manage employees, attendance, and payroll efficiently
+        using HRPro dashboard.
+    </p>
+
+    <!-- QUICK STATS -->
+    <div class="card">
+        <h3>Total Employees</h3>
+        <p id="empCount">0</p>
+    </div>
+
+</div>
+
+
+<footer>
+    <p>HRPro Company</p>
+    <p>Working Days: Mon - Sat | 9AM - 6PM</p>
+    <p>Email: hr@hrpro.com</p>
+    <p>© 2026 HRPro</p>
+</footer>
+
+<!-- JS -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
