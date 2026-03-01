@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinic Management System</title>
+    <link rel="stylesheet" href="cms.css" />
+    <!-- Link to external CSS file -->
+  </head>
+  <body>
+    <!-- Header section -->
+    <header class="header">
+  <div class="container">
+    <img src="logo.jpg" class="logo" alt="Clinic Logo">
+    <span class="text">CLINIC MANAGEMENT SYSTEM</span>
+  </div>
+</header>
+
+   
+      
+      <!-- Navigation menu -->
+      <nav class="navbar">
+        <ul>
+          <li><a href=HOME>Home</a></li>
+          <li><a href=Doctors.html>Doctors</a></li>
+          <li><a href=Appointments.html>Appointments</a></li>
+          <li><a href=About.html>About</a></li>
+          <li><a href=Contact.html>Contact</a></li>
+          <li><a href=login.html>loginpage</a></li>
+          <li><a href=signup.html>signup</a></li>
+          </ul>
+      </nav>
+   <section class="banner">
+    <img src="img.jpg" alt="Clinic Image">
+</section>
+
+    <section>
+        
+    <h2>About Our Clinic</h2>
+    <p>
+        City Care Clinic provides high-quality healthcare services with experienced doctors
+        and modern medical facilities. We aim to deliver affordable and reliable treatment
+        to all our patients.
+    </p>
+</section>
+
+<!-- Featured Doctors / Departments -->
+<section>
+    <h2>Our Doctors & Departments</h2>
+    <div class="doctors">
+        <div class="doctor-card">
+            <h3>Dr. Anil Kumar</h3>
+            <p>General Physician</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Sneha Rao</h3>
+            <p>Pediatrician</p>
+        </div>
+        <div class="doctor-card">
+            <h3>Dr. Rajesh Mehta</h3>
+            <p>Cardiologist</p>
+        </div>
+    </div>
+</section>
+
+<!-- Health Tips / Latest Updates -->
+<section>
+    <h2>Health Tips & Updates</h2>
+    <ul>
+        <li>Drink plenty of water every day.</li>
+        <li>Regular health check-ups are important.</li>
+        <li>Clinic closed on Sundays.</li>
+    </ul>
+</section>
+    
+<h2><center>Singup page</center></h2>
+      FUll Name:<input type="text" id="name"><br>
+      Email:<input type="text" id="Email"><br>
+      Password:<input type="text" id="password"><br>
+      Confirm password:<input type="text" id="Confirm password"><br>
+      contact:<input type="text" id="contact"><br>
+      <button onclick="check()">check</button>
+    </main>
+    <h2><center>Login page</center></h2>
+    Email:<input type="text" id="Email"><br>
+    Password:<input type="text" id="password"><br>
+    <button onclick="check()">check</button>
+    
+    <!-- Footer section -->
+    <footer id="main-footer">
+      <div class="container">
+        <p>&copy; 2026 Healthcare. All rights reserved.</p>
+      </div>
+      
+    </footer>
+  </body>
+  <script src="cms.js"></script>
+</html>
